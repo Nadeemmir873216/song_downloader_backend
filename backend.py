@@ -1,8 +1,13 @@
-from flask import Flask, request, jsonify , send_file
+from flask import Flask, request, jsonify, send_file
+from flask_cors import CORS  # Import CORS
+
 import os
 import yt_dlp
 
 app = Flask(__name__)
+
+# Apply CORS to the entire app, allowing all origins
+CORS(app)
 
 @app.route('/')
 def index():
